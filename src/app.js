@@ -1,7 +1,7 @@
 // INSIDE app.js FILE WE WILL IMPORT EXPRESS.JS FOR starting server using app.listen()
 import express from 'express'
 import cors from 'cors'
-import cookieParser from 'cookie-oarse'
+import cookieParser from 'cookie-parser'
 const app=express();
 
 //HERE USE METHOD IS USED TO APPLY MIDDLEWARE ON OUR APPLICATION IT WILL TAKES AN CORS 
@@ -28,9 +28,13 @@ app.use(express.static("public"))
 
 
 // cookie-parser
-
-app.use(cookieParserarser())
-
+app.use(cookieParser())
 
 
+// import routes 
+import userRouter  from './routes/user.routes.js'
+
+app.use('/api/v1/user',userRouter)
+// URL
+// https://localhost:8000/api/v1/user/regester
 export default app;

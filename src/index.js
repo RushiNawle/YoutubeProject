@@ -11,8 +11,6 @@ dotenv.config({
 db_connection()// async function always returns promise so we have to used .then() and .catch()
 .then(()=>{
 
-    app.get()
-
   app.listen(process.env.PORT||8000,()=>{
     console.log(`SERVER STARTED ON THE PORT ${process.env.PORT}`);
   })
